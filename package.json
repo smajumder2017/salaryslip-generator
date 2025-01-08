@@ -1,0 +1,21 @@
+{
+  "name": "salary-slip-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Subhadip Majumder",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
+    "dotenv": "^16.4.7",
+    "googleapis": "^105.0.0",
+    "handlebars": "^4.7.8",
+    "nodemailer": "^6.9.16",
+    "puppeteer": "^23.11.1",
+    "xlsx": "^0.18.5"
+  }
+}

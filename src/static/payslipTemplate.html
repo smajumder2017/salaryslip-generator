@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ohh Shawarma - Payslip</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: white;
+      /* Set background color to white */
+    }
+
+    .container {
+      /* width: 600px; */
+      /* Adjust width as needed */
+      /* margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .table-container {
+      display: flex;
+      /* justify-content: space-between; */
+    }
+
+    table {
+      width: 50%;
+      border-collapse: collapse;
+      border: 1px solid #ccc;
+    }
+
+    table.final {
+      width: 100%;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      border: 1px solid #ddd;
+      height: 25px;
+      /* Set fixed cell height */
+    }
+
+    .label {
+      font-weight: bold;
+    }
+
+    .value {
+      text-align: right;
+    }
+
+    .earnings-header,
+    .deductions-header {
+      background-color: #f2f2f2;
+    }
+
+    .earnings-header .label,
+    .deductions-header .label {
+      text-align: center;
+    }
+
+    .net-pay {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-top: 20px;
+      text-align: right;
+    }
+
+    .heading {
+      padding: 0px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer {
+      margin-top: 10px;
+      font-size: small;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="heading">
+      <img src="data:image/png;base64,{{logo}}" height="150" />
+      <h1>Ohh Shawarma</h1>
+      <div>
+        <p>Payslip For: {{[Payslip For]}}</p>
+        <p>Amount in INR</p>
+      </div>
+    </div>
+
+
+    <div class="table-container">
+      <table>
+        <tr>
+          <td class="label">Employee Code</td>
+          <td class="value">{{[Employee Code]}}</td>
+        </tr>
+        <tr>
+          <td class="label">Employee Name</td>
+          <td class="value">{{[Employee Name]}}</td>
+        </tr>
+        <tr>
+          <td class="label">Date of Joining</td>
+          <td class="value">{{[Date of Joining]}}</td>
+        </tr>
+        <tr>
+          <td class="label">Designation</td>
+          <td class="value">{{[Designation]}}</td>
+        </tr>
+        <tr>
+          <td class="label">Total Work Days</td>
+          <td class="value">{{[Total Work Days]}}</td>
+        </tr>
+        <tr>
+          <td class="label">LOP Days</td>
+          <td class="value">{{[LOP Days]}}</td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="label">Bank Name</td>
+          <td class="value">{{[Bank Name]}}</td>
+        </tr>
+        <tr>
+          <td class="label">Account No</td>
+          <td class="value">{{[Account No]}}</td>
+        </tr>
+        <tr>
+          <td class="label">IFSC Code</td>
+          <td class="value">{{[IFSC Code]}}</td>
+        </tr>
+        <tr>
+          <td class="label">Location</td>
+          <td class="value">{{[Location]}}</td>
+        </tr>
+        <tr>
+          <td class="label">Days Worked</td>
+          <td class="value">{{[Days Worked]}}</td>
+        </tr>
+        <tr>
+          <td class="label">Extra Shift</td>
+          <td class="value">{{[Extra Shift Days]}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <tr class="earnings-header">
+          <th>EARNINGS</th>
+          <th>EARNED</th>
+        </tr>
+        <tr>
+          <td class="label">Basic</td>
+          <td class="value">₹{{[Basic]}}</td>
+        </tr>
+        <tr>
+          <td class="label">Bonus</td>
+          <td class="value">₹{{[Bonus]}}</td>
+        </tr>
+        <tr>
+          <td class="label">Extra Shift</td>
+          <td class="value">₹{{[Extra Shift]}}</td>
+        </tr>
+        <tr>
+          <td class="label">GROSS EARNINGS (A)</td>
+          <td class="value">₹{{[GROSS EARNINGS]}}</td>
+        </tr>
+      </table>
+
+      <table>
+        <tr class="deductions-header">
+          <th>DEDUCTION</th>
+          <th>AMOUNT</th>
+        </tr>
+        <tr>
+          <td class="label">Advance</td>
+          <td class="value">₹{{[Advance]}}</td>
+        </tr>
+        <tr>
+          <td class="label">Loss of Pay</td>
+          <td class="value">₹{{[Loss of Pay]}}</td>
+        </tr>
+        <tr>
+          <td class="label"></td>
+          <td class="value"></td>
+        </tr>
+        <tr>
+          <td class="label">GROSS DEDUCTIONS (B)</td>
+          <td class="value">₹{{[GROSS DEDUCTIONS]}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div>
+    <table class="final">
+      <tbody>
+        <tr>
+          <td class="label">NET PAY (A - B):</td>
+          <td class="value">₹{{[NET PAY]}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="footer">
+    *This is an electronically generated payslip, no need to sign.
+  </div>
+</body>
+
+</html>
